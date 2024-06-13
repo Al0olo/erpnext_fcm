@@ -41,7 +41,7 @@ def process_notification(device_id, notification):
     if title:
         title = convert_message(title)
 
-    url = "https://fcm.googleapis.com/fcm/send"
+    url = "https://fcm.googleapis.com/v1/{parent=projects/ahlanapp-5e4ec}/messages:send"
     body = {
         "to": device_id.device_id,
         "notification": {"body": message, "title": title},
