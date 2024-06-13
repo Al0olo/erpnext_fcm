@@ -6,9 +6,8 @@ import re
 
 
 def user_id(doc):
-    user_email = doc.for_user
     user_device_id = frappe.get_all(
-        "User Device", filters={"user": user_email}, fields=["device_id"]
+        "User Device", fields=["device_id"]
     )
     return user_device_id
 
