@@ -12,7 +12,7 @@ def user_id(doc):
     return user_device_id
 
 
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def send_notification(doc, event):
     device_ids = user_id(doc)
     for device_id in device_ids:
